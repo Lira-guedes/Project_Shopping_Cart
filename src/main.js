@@ -45,11 +45,11 @@ const cartButtons = () => {
     saveCartID(id);
   }));
 };
-// salva carrinho no local storage
+// salva cart no local storage
 async function saveCart() {
   const items = await Promise.all(savedCartIds.map(fetchProduct));
   const elementProduct = items.map(createCartProductElement);
-  elementProduct.forEach((product) => cart.append(product));
+  elementProduct.forEach((elem) => cart.append(elem));
 }
 
 async function loadProducts() {
